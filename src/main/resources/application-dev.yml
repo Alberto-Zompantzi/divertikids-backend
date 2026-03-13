@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/divertikids_db
+    username: alberto_admin
+    password: mysecretpassword
+  jpa:
+    show-sql: true

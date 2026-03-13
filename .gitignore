@@ -1,9 +1,7 @@
-HELP.md
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+bin/
+out/
 
 ### STS ###
 .apt_generated
@@ -13,18 +11,13 @@ build/
 .settings
 .springBeans
 .sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
 
 ### NetBeans ###
 /nbproject/private/
@@ -35,3 +28,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Sistema y Log
+.DS_Store
+*.log
+.env
+application-dev.yml
