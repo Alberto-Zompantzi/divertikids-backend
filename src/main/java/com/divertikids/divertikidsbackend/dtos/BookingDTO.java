@@ -1,5 +1,6 @@
 package com.divertikids.divertikidsbackend.dtos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
@@ -22,9 +23,11 @@ public class BookingDTO {
     private LocalDate eventDate;
 
     @NotNull(message = "La hora de inicio es obligatoria.")
+    @JsonFormat(pattern = "HH:mm[:ss]")
     private LocalTime startTime;
 
     @NotNull(message = "La hora de finalización es obligatoria.")
+    @JsonFormat(pattern = "HH:mm[:ss]")
     private LocalTime endTime;
 
     @NotNull(message = "El presupuesto es obligatorio.")
