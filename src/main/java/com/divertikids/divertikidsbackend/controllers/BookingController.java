@@ -22,4 +22,8 @@ public class BookingController {
         Booking newBooking = bookingService.createBooking(bookingDTO);
         return new ResponseEntity<>(newBooking, HttpStatus.CREATED);
     }
+    @GetMapping("/health")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("Servidor despierto y listo.");
+    }
 }
