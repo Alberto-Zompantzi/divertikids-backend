@@ -23,16 +23,16 @@ Integrado con el frontend React para que las familias reserven desde la web sin 
 
 ## Stack tecnológico
 
-| Área | Tecnología |
-|------|------------|
-| **Lenguaje** | Java 17 |
-| **Framework** | Spring Boot 3.2 |
-| **Web** | Spring Web (REST) |
-| **Persistencia** | Spring Data JPA + Hibernate |
-| **Validación** | Bean Validation (Jakarta) |
-| **Base de datos** | PostgreSQL |
+| Área                  | Tecnología                         |
+| --------------------- | ---------------------------------- |
+| **Lenguaje**          | Java 17                            |
+| **Framework**         | Spring Boot 3.2                    |
+| **Web**               | Spring Web (REST)                  |
+| **Persistencia**      | Spring Data JPA + Hibernate        |
+| **Validación**        | Bean Validation (Jakarta)          |
+| **Base de datos**     | PostgreSQL                         |
 | **Documentación API** | SpringDoc OpenAPI 2.x (Swagger UI) |
-| **Utilidades** | Lombok |
+| **Utilidades**        | Lombok                             |
 
 ---
 
@@ -63,46 +63,13 @@ divertikids-backend/
 
 ## API REST
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| `POST` | `/api/v1/bookings` | Crear reserva (body: customerName, customerEmail, eventDate, startTime, endTime, totalPrice) |
-| `GET` | `/api/v1/bookings/customer?email={email}` | Listar reservas por email del cliente |
-| `POST` | `/api/v1/bookings/{id}/cancel` | Cancelar reserva por UUID |
+| Método | Ruta                                      | Descripción                                                                                  |
+| ------ | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `POST` | `/api/v1/bookings`                        | Crear reserva (body: customerName, customerEmail, eventDate, startTime, endTime, totalPrice) |
+| `GET`  | `/api/v1/bookings/customer?email={email}` | Listar reservas por email del cliente                                                        |
+| `POST` | `/api/v1/bookings/{id}/cancel`            | Cancelar reserva por UUID                                                                    |
 
 Documentación interactiva: **Swagger UI** → `http://localhost:8080/swagger-ui.html`
-
----
-
-## Requisitos
-
-- **Java 17**
-- **Maven 3.x**
-- **PostgreSQL** (por defecto en `localhost:5432`)
-    - Base de datos: `divertikids_db`
-    - Usuario: `user_diverti`
-    - Contraseña: `password_123`
-
----
-
-## Configuración
-
-Editar `src/main/resources/application.yml` si es necesario:
-
-```yaml
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/divertikids_db
-    username: user_diverti
-    password: password_123
-  jpa:
-    hibernate:
-      ddl-auto: update   # Crea/actualiza tablas al arrancar
-
-server:
-  port: 8080
-```
-
-CORS está configurado para orígenes `http://localhost:5173` y `http://127.0.0.1:5173` (frontend en desarrollo).
 
 ---
 
